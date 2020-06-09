@@ -55,11 +55,41 @@
     border-bottom:1px solid #cccccc;
     padding-bottom:30px;
   }
+  .open_btn,.close_btn{cursor: pointer;}
   .img-box{padding:10px;}
-  .close_x{font-size:48px}
+  .close_x{font-size:48px;}
+  .modal-header{border-bottom:none;padding-top:0;}
+  .modal-dialog{width:400px;}
+  .modal-box{
+    padding:0 10px 20px;
+    display:flex;
+    flex-flow:column nowrap;
+  }
+  .modla_box>span{
+    font-size:48px;
+    align-self: flex-end;
+  }
+  .section02 .img_box>img:hover{
+    animation:exp 0.3s;
+  }
+  @keyframes exp{
+    0%{transform:translate(0px,0px)}
+    10%{transform:translate(10px,10px)}
+    20%{transform:translate(0px,0px)}
+    30%{transform:translate(-10px,-0px)}
+    40%{transform:translate(0px,0px)}
+    50%{transform:translate(5px,5px)}
+    60%{transform:translate(0px,0px)}
+    70%{transform:translate(-5px,-5px)}
+    80%{transform:translate(0px,0px)}
+    90%{transform:translate(2px,2px)}
+    100%{transform:translate(0px,0px)}
+  }
 
-
-
+  footer{padding:50px 0;}
+  footer .row{padding:35px 0;}
+  a.label{padding:10px;font-size:14px;}
+  small{line-height:0.8em;}
 
 
 
@@ -98,7 +128,7 @@
   <script>
     $(function(){
       $('.open_btn').click(function(){
-        $(this).next.modal('show');
+        $(this).next().modal('show');
       });
       $('.close_btn').click(function(){
         $('modal').modal('hide');
@@ -204,34 +234,16 @@
             <div class="img-box">
               <img class="open_btn" src="img/mo01.png" alt="mo01">
               <div>
-                <div class="modal">
-                  <div class="header_box">
-                    <p>&times;</p>
-                  </div>
-                  <div class="body_box"></div>
-                  <div class="footer_box"></div>
+                <div class="modal-content">
+                  <div class="modal_box">
+                    <span class="close_btn">&times;</span>
+                    <img src="img/mo01.png" alt="mo01">
+                    <h3>모달창</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti nulla eius omnis exercitationem, iste beatae laborum asperiores unde dicta. Officia dicta quaerat distinctio, quisquam quibusdam quos nam commodi amet odit.</p>
+                    <button type="button" class="close_btn btn btn-warning">닫기</button>
+                  </div>            
                 </div>
               </div>
-              <div class="modal fade">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <div class="col-xs-12 text-right"><span>
-                        <span class="close_btn">&times;</span>
-                      </div>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                      <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-              </div><!-- /.modal -->
             </div>
             <div class="img-box">
               <img class="open_btn" src="img/mo02.png" alt="mo02">
@@ -282,6 +294,30 @@
         </div>
       </div>
     </section>
-    <footer></footer>
+    <footer>
+      <!-- <div class="container">
+        <a href="#">새로운소식<span class="badge">10</span></a>
+        <button type="button" class="btn btn-primary">새로운소식<span class="badge">10</span></button>
+      </div> -->
+      <div class="container">
+        <div class="row">
+          <a href="#" class="label label-primary col-xs-2 col-xs-offset-4">github<span class="badge">5</span></a>
+          <a href="#" class="label label-success col-xs-2 col-xs-offset-1">twitter<span class="badge">2</span></a>
+          <a href="#" class="label label-info col-xs-2 col-xs-offset-1">facebook<span class="badge">10+</span></a>
+        </div>
+        <div class="row">
+          <p class="col-xs-8 col-xs-offset-2 text-center">
+            <small>ipsum dolor sit amet consectetur adipisicing elit. Vero facere animi dolorem, odio voluptatibus mollitia numquam impedit tempora obcaecati, tempore consectetur laboriosam? Aliquam eaque voluptate iure dolore vel soluta quo!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt atque velit harum sunt sint explicabo eligendi recusandae, consequuntur, doloribus quibusdam esse non praesentium odit perspiciatis ex ipsa ab eveniet porro?</small>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2"><a href="#">처음으로</a></div>
+          <div class="col-xs-2"><a href="#">두번째로</a></div>
+          <div class="col-xs-2"><a href="#">세번째로</a></div>
+          <div class="col-xs-2"><a href="#">네번째로</a></div>
+        </div>
+        
+      </div>
+    </footer>
 </body>
 </html>
